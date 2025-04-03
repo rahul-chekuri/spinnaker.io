@@ -12,6 +12,7 @@ changelog.
 ## Coming Soon in Release 2025.1.0
 
 
+
 #### Retrofit2 Upgrade
 
 Retrofit1 clients from the following spinnaker services have been upgraded to retrofit2. With this release, retrofit2 upgrade of all spinnaker services is completed.
@@ -21,3 +22,14 @@ Retrofit1 clients from the following spinnaker services have been upgraded to re
 
 A new CallAdapter named LegacySignatureCallAdapter has been introduced in Kork to provide support for legacy Retrofit method signatures. This adapter enables the use of Retrofit interfaces that do not return Call<..>, similar to how Retrofit 1 worked. Both Kayenta and Halyard leveraged this feature during their Retrofit 2 upgrades, allowing them to maintain their existing method signatures without wrapping them in Call<..> or using Retrofit2SyncCall.execute()
 - https://github.com/spinnaker/spinnaker/pull/7088
+
+All retrofit clients are upgraded to retrofit2 and any references to retrofit1 dependencies are removed in the following services.
+- Igor - https://github.com/spinnaker/igor/pull/1313
+
+### spring security 5 oauth2 migration in gate
+Remove deprecated OAuth2 annotation. Instead Use Java DSL way of OAuth2
+- gate - https://github.com/spinnaker/gate/pull/1887
+Migrated OAuth2 configuration to align with Spring Security 5 Java DSL standards
+- halyard - https://github.com/spinnaker/halyard/pull/2216
+Update Spinnaker documentation for OAuth2 property changes in Spring Security 5
+- spinnaker.io - https://github.com/spinnaker/spinnaker.io/pull/503
